@@ -1,1 +1,25 @@
 @import "tailwindcss";
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ink: #12172b;
+  --color-paper: #f5f6fa;
+  --color-dispatch: #ff6b35;
+  --color-route: #0fbfa6;
+  --color-signal: #7c5cfc;
+  --color-slate: #5b6478;
+
+  --font-display: 'Bricolage Grotesque Variable', sans-serif;
+  --font-body: 'Inter Variable', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', monospace;
+}
+
+@layer base {
+  body {
+    @apply font-body antialiased transition-colors duration-300;
+  }
+}

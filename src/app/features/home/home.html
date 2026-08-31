@@ -1,3 +1,28 @@
-<main class="min-h-screen flex items-center justify-center bg-slate-950 text-white">
-  <h1 class="text-4xl font-bold">Home — scaffolding placeholder</h1>
+<main class="min-h-screen bg-paper text-ink dark:bg-ink dark:text-paper transition-colors duration-300 p-12">
+  <div class="flex items-center justify-between mb-16">
+    <span class="font-mono text-sm text-slate">design-system-preview</span>
+    <button
+      (click)="theme.toggle()"
+      class="font-mono text-sm px-4 py-2 rounded-full border border-slate/40 hover:border-dispatch transition-colors"
+    >
+      {{ theme.theme() === 'dark' ? '☀ light' : '● dark' }}
+    </button>
+  </div>
+
+  <h1 class="font-display text-6xl font-bold mb-4">Seth Sorrell</h1>
+  <p class="font-body text-lg text-slate max-w-xl mb-12">
+    This is the body typeface — Inter — set at a readable size for longer passages of case-study copy.
+  </p>
+
+  <div class="grid grid-cols-3 gap-6 max-w-2xl">
+    <div class="h-24 rounded-xl bg-dispatch flex items-end p-3">
+      <span class="font-mono text-xs text-white">dispatch</span>
+    </div>
+    <div class="h-24 rounded-xl bg-route flex items-end p-3">
+      <span class="font-mono text-xs text-white">route</span>
+    </div>
+    <div class="h-24 rounded-xl bg-signal flex items-end p-3">
+      <span class="font-mono text-xs text-white">signal</span>
+    </div>
+  </div>
 </main>
