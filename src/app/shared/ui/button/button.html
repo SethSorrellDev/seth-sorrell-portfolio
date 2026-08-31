@@ -1,5 +1,5 @@
 @if (routerLink()) {
-  <a [routerLink]="routerLink()" [class]="classes()"><ng-content /></a>
+  <a [routerLink]="routerLink()" [fragment]="fragment()" [class]="classes()"><ng-content /></a>
 } @else if (href()) {
   <a [href]="href()" [attr.download]="download() ? '' : null" [attr.target]="download() ? null : '_blank'" [attr.rel]="download() ? null : 'noopener noreferrer'" [class]="classes()"><ng-content /></a>
 } @else {

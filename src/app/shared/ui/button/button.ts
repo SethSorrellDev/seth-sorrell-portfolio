@@ -18,6 +18,7 @@ export class Button {
   variant = input<ButtonVariant>('primary');
   href = input<string>();
   routerLink = input<string>();
+  fragment = input<string>();
   download = input(false);
 
   classes = computed(

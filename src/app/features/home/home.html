@@ -1,47 +1,6 @@
 <main class="bg-paper text-ink dark:bg-ink dark:text-paper transition-colors duration-300">
-  <section class="max-w-6xl mx-auto px-6 pt-16 pb-24">
-    <span class="font-mono text-sm text-slate">design-system-preview</span>
-
-    <h1 class="font-display text-6xl font-bold mt-4 mb-4">Seth Sorrell</h1>
-    <p class="font-body text-lg text-slate max-w-xl mb-12">
-      This is the body typeface — Inter — set at a readable size for longer passages of case-study
-      copy.
-    </p>
-
-    <div class="grid grid-cols-3 gap-6 max-w-2xl mb-16">
-      <div class="h-24 rounded-xl bg-dispatch flex items-end p-3">
-        <span class="font-mono text-xs text-white">dispatch</span>
-      </div>
-      <div class="h-24 rounded-xl bg-route flex items-end p-3">
-        <span class="font-mono text-xs text-white">route</span>
-      </div>
-      <div class="h-24 rounded-xl bg-signal flex items-end p-3">
-        <span class="font-mono text-xs text-white">signal</span>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap items-center gap-4 mb-8">
-      <app-button variant="primary">Primary</app-button>
-      <app-button variant="secondary">Secondary</app-button>
-      <app-button variant="ghost">Ghost</app-button>
-    </div>
-
-    <div class="flex flex-wrap items-center gap-3 mb-16">
-      <app-badge tone="route">Deployed</app-badge>
-      <app-badge tone="dispatch">In Progress</app-badge>
-      <app-badge tone="signal">New</app-badge>
-      <app-badge tone="slate">Java 21</app-badge>
-    </div>
-
-    <app-card class="block max-w-sm">
-      <p class="font-mono text-xs text-slate mb-2">card-preview</p>
-      <p class="font-body">Shared card component — will hold project summaries in Phase 4.</p>
-    </app-card>
-  </section>
-
-  <section id="about" class="max-w-6xl mx-auto px-6 py-24 border-t border-slate/10">
-    <p class="font-mono text-sm text-slate">About — built in Phase 3</p>
-  </section>
+  <app-hero />
+  <app-about />
 
   <section id="credentials" class="max-w-6xl mx-auto px-6 py-24 border-t border-slate/10">
     <p class="font-mono text-sm text-slate">Credentials — built in Phase 4</p>

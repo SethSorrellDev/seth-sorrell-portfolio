@@ -1,15 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { ThemeService } from '../../core/theme.service';
-import { Button } from '../../shared/ui/button/button';
-import { Badge } from '../../shared/ui/badge/badge';
-import { Card } from '../../shared/ui/card/card';
+import { Component } from '@angular/core';
+import { Hero } from './hero/hero';
+import { About } from './about/about';
 
 @Component({
   selector: 'app-home',
-  imports: [Button, Badge, Card],
+  imports: [Hero, About],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
-  theme = inject(ThemeService);
-}
+export class Home {}
