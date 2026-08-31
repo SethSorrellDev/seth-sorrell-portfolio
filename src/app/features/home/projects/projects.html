@@ -1,0 +1,23 @@
+<section id="projects" class="max-w-6xl mx-auto px-6 py-24 md:py-32 border-t border-slate/10">
+  <span class="font-mono text-sm text-slate">projects</span>
+  <h2 class="font-display text-3xl md:text-4xl font-bold mt-3 mb-4 text-ink dark:text-paper">Four apps, one field-service domain</h2>
+  <p class="font-body text-lg text-slate max-w-2xl mb-12">Each one solves a problem I've actually run into on shift — routing, inspections, scheduling, and the records tying them together.</p>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    @for (project of projects; track project.slug) {
+      <app-card [routerLink]="'/projects/' + project.slug" class="block">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <h3 class="font-display text-xl font-bold text-ink dark:text-paper">{{ project.name }}</h3>
+          <app-badge [tone]="project.statusTone">{{ project.statusLabel }}</app-badge>
+        </div>
+        <p class="font-body text-slate mb-5">{{ project.tagline }}</p>
+        <div class="flex flex-wrap gap-2 mb-5">
+          @for (tech of project.stack; track tech) {
+            <app-badge tone="slate">{{ tech }}</app-badge>
+          }
+        </div>
+        <span class="font-mono text-xs text-dispatch">View case study →</span>
+      </app-card>
+    }
+  </div>
+</section>
