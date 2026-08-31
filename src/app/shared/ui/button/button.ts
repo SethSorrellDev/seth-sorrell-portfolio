@@ -1,5 +1,6 @@
 import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
 
@@ -11,7 +12,7 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
 
 @Component({
   selector: 'app-button',
-  imports: [RouterLink],
+  imports: [RouterLink, NgIf],
   templateUrl: './button.html',
 })
 export class Button {
