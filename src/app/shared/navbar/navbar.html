@@ -1,0 +1,15 @@
+<header class="sticky top-0 z-50 backdrop-blur-md bg-paper/80 dark:bg-ink/80 border-b border-slate/10">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a routerLink="/" class="font-display text-xl font-bold text-ink dark:text-paper">Seth Sorrell</a>
+
+    <nav class="hidden md:flex items-center gap-8">
+      @for (link of links; track link.fragment) {
+        <a routerLink="/" [fragment]="link.fragment" class="font-mono text-sm text-slate hover:text-dispatch transition-colors">{{ link.label }}</a>
+      }
+    </nav>
+
+    <button (click)="theme.toggle()" class="font-mono text-xs px-3 py-1.5 rounded-full border border-slate/30 hover:border-dispatch transition-colors">
+      {{ theme.theme() === 'dark' ? '☀' : '●' }}
+    </button>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+<footer class="border-t border-slate/10 mt-24">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <p class="font-mono text-xs text-slate">© {{ year }} Seth Sorrell. Built with Angular & Tailwind.</p>
+
+    <div class="flex items-center gap-6">
+      @for (social of socials; track social.label) {
+        <a [href]="social.href" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-slate hover:text-dispatch transition-colors">{{ social.label }}</a>
+      }
+    </div>
+  </div>
+</footer>
