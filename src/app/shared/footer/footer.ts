@@ -9,7 +9,7 @@ export class Footer {
 
   socials = [
     { label: 'GitHub', href: 'https://github.com/SethSorrellDev' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/REPLACE-ME' },
-    { label: 'Email', href: 'mailto:REPLACE-ME@example.com' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/seth-sorrell-2b7040406' },
+    { label: 'Email', href: 'mailto:smsorrell27@gmail.com' },
   ];
 }
