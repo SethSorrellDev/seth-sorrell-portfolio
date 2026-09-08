@@ -1,5 +1,6 @@
 import { Component, signal, computed } from '@angular/core';
 import emailjs from '@emailjs/browser';
+import { ScrollRevealDirective } from '../../../shared/scroll-reveal.directive';
 
 const SERVICE_ID = 'REPLACE_ME_SERVICE_ID';
 const TEMPLATE_ID = 'REPLACE_ME_TEMPLATE_ID';
@@ -9,6 +10,7 @@ type SubmitStatus = 'idle' | 'sending' | 'sent' | 'error';
 
 @Component({
   selector: 'app-contact',
+  imports: [ScrollRevealDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })

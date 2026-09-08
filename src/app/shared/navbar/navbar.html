@@ -8,8 +8,17 @@
       }
     </nav>
 
-    <button (click)="theme.toggle()" class="font-mono text-xs px-3 py-1.5 rounded-full border border-slate/30 hover:border-dispatch transition-colors">
-      {{ theme.theme() === 'dark' ? '☀' : '●' }}
-    </button>
+    <div class="flex items-center gap-3">
+      <button (click)="theme.toggle()" class="font-mono text-xs px-3 py-1.5 rounded-full border border-slate/30 hover:border-dispatch transition-colors">{{ theme.theme() === 'dark' ? '☀' : '●' }}</button>
+      <button (click)="mobileMenuOpen.set(!mobileMenuOpen())" [attr.aria-expanded]="mobileMenuOpen()" aria-label="Toggle menu" class="md:hidden font-mono text-xs px-3 py-1.5 rounded-full border border-slate/30 hover:border-dispatch transition-colors">{{ mobileMenuOpen() ? '✕' : '☰' }}</button>
+    </div>
   </div>
+
+  @if (mobileMenuOpen()) {
+    <nav class="md:hidden border-t border-slate/10 bg-paper dark:bg-ink px-6 py-4 flex flex-col gap-4">
+      @for (link of links; track link.fragment) {
+        <a routerLink="/" [fragment]="link.fragment" (click)="mobileMenuOpen.set(false)" class="font-mono text-sm text-slate hover:text-dispatch transition-colors">{{ link.label }}</a>
+      }
+    </nav>
+  }
 </header>

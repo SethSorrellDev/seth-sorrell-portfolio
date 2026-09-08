@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../core/theme.service';
 
@@ -9,6 +9,7 @@ import { ThemeService } from '../../core/theme.service';
 })
 export class Navbar {
   theme = inject(ThemeService);
+  mobileMenuOpen = signal(false);
 
   links = [
     { label: 'About', fragment: 'about' },

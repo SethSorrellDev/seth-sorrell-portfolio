@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Card } from '../../../shared/ui/card/card';
 import { Badge, BadgeTone } from '../../../shared/ui/badge/badge';
+import { ScrollRevealDirective } from '../../../shared/scroll-reveal.directive';
 
 interface Credential {
   name: string;
@@ -11,7 +12,7 @@ interface Credential {
 
 @Component({
   selector: 'app-credentials',
-  imports: [Card, Badge],
+  imports: [Card, Badge, ScrollRevealDirective],
   templateUrl: './credentials.html',
   styleUrl: './credentials.css',
 })

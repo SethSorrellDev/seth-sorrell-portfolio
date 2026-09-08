@@ -13,20 +13,23 @@
 
     <p class="sr-only">A route line connecting Seth's current role at the Frankfort Plant through four software projects — AssistantScheduler, RouteOptimizer, FleetCheck, and RouteBook — toward a target Software Engineer role at Cintas Corporate.</p>
 
-    <div class="relative">
-      <svg [attr.viewBox]="viewBox" class="w-full h-auto" aria-hidden="true">
-        <path [attr.d]="pathD" fill="none" class="route-path stroke-dispatch" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" />
-      </svg>
+    <div class="relative overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-visible">
+      <div class="relative min-w-[640px] md:min-w-0">
+        <svg [attr.viewBox]="viewBox" class="w-full h-auto" aria-hidden="true">
+          <path [attr.d]="pathD" fill="none" class="route-path stroke-dispatch" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" />
+        </svg>
 
-      <div class="absolute inset-0">
-        @for (node of nodes; track node.label; let i = $index) {
-          <div class="route-node absolute flex flex-col items-center" [style.left]="(node.x / 12) + '%'" [style.top]="(node.y / 4) + '%'" [style.animation-delay.ms]="i * 380">
-            <span class="block w-3 h-3 rounded-full ring-4 ring-paper dark:ring-ink" [class.bg-slate]="node.kind === 'origin'" [class.bg-dispatch]="node.kind === 'project'" [class.bg-signal]="node.kind === 'destination'"></span>
-            <span class="mt-3 font-mono text-xs whitespace-nowrap text-ink dark:text-paper font-medium">{{ node.label }}</span>
-            <span class="font-mono text-[10px] whitespace-nowrap text-slate">{{ node.sublabel }}</span>
-          </div>
-        }
+        <div class="absolute inset-0">
+          @for (node of nodes; track node.label; let i = $index) {
+            <div class="route-node absolute flex flex-col items-center" [style.left]="(node.x / 12) + '%'" [style.top]="(node.y / 4) + '%'" [style.animation-delay.ms]="i * 380">
+              <span class="block w-3 h-3 rounded-full ring-4 ring-paper dark:ring-ink" [class.bg-slate]="node.kind === 'origin'" [class.bg-dispatch]="node.kind === 'project'" [class.bg-signal]="node.kind === 'destination'"></span>
+              <span class="mt-3 font-mono text-[10px] md:text-xs whitespace-nowrap text-ink dark:text-paper font-medium">{{ node.label }}</span>
+              <span class="font-mono text-[9px] md:text-[10px] whitespace-nowrap text-slate">{{ node.sublabel }}</span>
+            </div>
+          }
+        </div>
       </div>
     </div>
+    <p class="text-center font-mono text-[10px] text-slate mt-2 md:hidden">← scroll to see full path →</p>
   </div>
 </section>

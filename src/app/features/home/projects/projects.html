@@ -4,8 +4,8 @@
   <p class="font-body text-lg text-slate max-w-2xl mb-12">Each one solves a problem I've actually run into on shift — routing, inspections, scheduling, and the records tying them together.</p>
 
   <div class="grid md:grid-cols-2 gap-6">
-    @for (project of projects; track project.slug) {
-      <app-card [routerLink]="'/projects/' + project.slug" [ariaLabel]="project.name + ' case study'" class="block">
+    @for (project of projects; track project.slug; let i = $index) {
+      <app-card [routerLink]="'/projects/' + project.slug" [ariaLabel]="project.name + ' case study'" class="block" [appScrollReveal]="i * 100">
         <div class="flex items-start justify-between gap-4 mb-3">
           <h3 class="font-display text-xl font-bold text-ink dark:text-paper">{{ project.name }}</h3>
           <app-badge [tone]="project.statusTone">{{ project.statusLabel }}</app-badge>
