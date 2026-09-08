@@ -14,5 +14,6 @@ export class Navbar {
     { label: 'About', fragment: 'about' },
     { label: 'Credentials', fragment: 'credentials' },
     { label: 'Projects', fragment: 'projects' },
+    { label: 'Contact', fragment: 'contact' },
   ];
 }

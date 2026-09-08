@@ -1,0 +1,39 @@
+<section id="contact" class="max-w-6xl mx-auto px-6 py-24 md:py-32 border-t border-slate/10">
+  <span class="font-mono text-sm text-slate">contact</span>
+  <h2 class="font-display text-3xl md:text-4xl font-bold mt-3 mb-4 text-ink dark:text-paper">Let's talk</h2>
+  <p class="font-body text-lg text-slate max-w-2xl mb-12">Reach out about an opening, a question on any of these apps, or just to talk shop on routing problems.</p>
+
+  @if (!isConfigured) {
+    <div class="max-w-xl rounded-2xl border border-slate/15 dark:border-white/10 p-6">
+      <p class="font-body text-slate">The contact form isn't wired up yet — for now, email me directly at <a href="mailto:smsorrell27@gmail.com" class="text-dispatch">smsorrell27@gmail.com</a>.</p>
+    </div>
+  } @else {
+    <form (submit)="onSubmit($event)" class="max-w-xl space-y-5">
+      <div>
+        <label for="name" class="block font-mono text-xs text-slate mb-2">Name</label>
+        <input id="name" type="text" [value]="name()" (input)="name.set(inputValue($event))" class="w-full rounded-lg border border-slate/30 bg-transparent px-4 py-3 font-body text-ink dark:text-paper focus:outline-none focus:border-dispatch transition-colors" />
+      </div>
+
+      <div>
+        <label for="email" class="block font-mono text-xs text-slate mb-2">Email</label>
+        <input id="email" type="email" [value]="email()" (input)="email.set(inputValue($event))" class="w-full rounded-lg border border-slate/30 bg-transparent px-4 py-3 font-body text-ink dark:text-paper focus:outline-none focus:border-dispatch transition-colors" />
+      </div>
+
+      <div>
+        <label for="message" class="block font-mono text-xs text-slate mb-2">Message</label>
+        <textarea id="message" rows="5" [value]="message()" (input)="message.set(textareaValue($event))" class="w-full rounded-lg border border-slate/30 bg-transparent px-4 py-3 font-body text-ink dark:text-paper focus:outline-none focus:border-dispatch transition-colors resize-none"></textarea>
+      </div>
+
+      <button type="submit" [disabled]="!isValid() || status() === 'sending'" class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono text-sm transition-colors duration-200 bg-dispatch text-white hover:bg-dispatch/90 disabled:opacity-40 disabled:cursor-not-allowed">
+        {{ status() === 'sending' ? 'Sending…' : 'Send Message' }}
+      </button>
+
+      @if (status() === 'sent') {
+        <p class="font-mono text-sm text-route">Message sent — thanks, I'll get back to you soon.</p>
+      }
+      @if (status() === 'error') {
+        <p class="font-mono text-sm text-dispatch">Something went wrong — email me directly at <a href="mailto:smsorrell27@gmail.com" class="underline">smsorrell27@gmail.com</a> instead.</p>
+      }
+    </form>
+  }
+</section>
