@@ -1,8 +1,9 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, effect, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PROJECTS } from '../../core/projects.data';
 import { Badge } from '../../shared/ui/badge/badge';
 import { Button } from '../../shared/ui/button/button';
+import { SeoService } from '../../core/seo.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -12,6 +13,7 @@ import { Button } from '../../shared/ui/button/button';
 })
 export class ProjectDetail {
   slug = input.required<string>();
+  private seo = inject(SeoService);
 
   project = computed(() => PROJECTS.find((p) => p.slug === this.slug()));
 
@@ -20,4 +22,17 @@ export class ProjectDetail {
     if (index === -1) return undefined;
     return PROJECTS[(index + 1) % PROJECTS.length];
   });
+
+  constructor() {
+    effect(() => {
+      const p = this.project();
+      if (p) {
+        this.seo.update({
+          title: `${p.name} — Seth Sorrell`,
+          description: p.tagline,
+          path: `/projects/${p.slug}`,
+        });
+      }
+    });
+  }
 }
