@@ -2,9 +2,9 @@ import { Component, signal, computed } from '@angular/core';
 import emailjs from '@emailjs/browser';
 import { ScrollRevealDirective } from '../../../shared/scroll-reveal.directive';
 
-const SERVICE_ID = 'REPLACE_ME_SERVICE_ID';
-const TEMPLATE_ID = 'REPLACE_ME_TEMPLATE_ID';
-const PUBLIC_KEY = 'REPLACE_ME_PUBLIC_KEY';
+const SERVICE_ID: string = 'service_npdfo1k';
+const TEMPLATE_ID: string = 'template_box4cbb';
+const PUBLIC_KEY: string = '5pSIc_FAvULsaeTG6';
 
 type SubmitStatus = 'idle' | 'sending' | 'sent' | 'error';
 
