@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
-const SITE_URL = 'https://REPLACE-ME-WITH-YOUR-DOMAIN.com';
+const SITE_URL = 'https://seth-sorrell-portfolio.onrender.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export interface SeoData {
