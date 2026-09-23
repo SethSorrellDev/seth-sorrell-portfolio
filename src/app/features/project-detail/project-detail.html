@@ -16,9 +16,17 @@
         }
       </div>
 
-      @if (p.liveUrl) {
-        <app-button variant="primary" [href]="p.liveUrl">View Live App</app-button>
-      }
+      <div class="flex flex-wrap gap-3">
+        @if (p.liveUrl) {
+          <app-button variant="primary" [href]="p.liveUrl">View Live App</app-button>
+        }
+        @if (p.repoUrl) {
+          <app-button variant="secondary" [href]="p.repoUrl">View Code</app-button>
+        }
+        @for (link of p.repoLinks ?? []; track link.url) {
+          <app-button variant="secondary" [href]="link.url">{{ link.label }} Repo</app-button>
+        }
+      </div>
     </header>
 
     <div class="max-w-3xl mx-auto px-6 pb-24 space-y-20">

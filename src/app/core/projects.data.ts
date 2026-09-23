@@ -14,6 +14,11 @@ export interface CaseStudy {
   whatsNext: string[];
 }
 
+export interface RepoLink {
+  label: string;
+  url: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -23,6 +28,7 @@ export interface Project {
   stack: string[];
   liveUrl?: string;
   repoUrl?: string;
+  repoLinks?: RepoLink[];
   caseStudy: CaseStudy;
 }
 
@@ -34,6 +40,8 @@ export const PROJECTS: Project[] = [
     statusLabel: 'Deployed',
     statusTone: 'route',
     stack: ['Spring Boot', 'React', 'TypeScript', 'Docker', 'PostgreSQL'],
+    liveUrl: 'https://fleetcheck-j4y2.onrender.com',
+    repoUrl: 'https://github.com/SethSorrellDev/fleetcheck',
     caseStudy: {
       problem: [
         "Vehicle inspections at the plant ran on paper and tribal knowledge — a driver flags an issue, a mechanic hears about it secondhand, and there's no real record of who signed off on what or when it actually got fixed.",
@@ -70,6 +78,7 @@ export const PROJECTS: Project[] = [
     statusTone: 'route',
     stack: ['Flask', 'PostgreSQL', 'Leaflet', 'OpenRouteService'],
     liveUrl: 'https://routeoptimizer-fgk8.onrender.com',
+    repoUrl: 'https://github.com/SethSorrellDev/routeoptimizer',
     caseStudy: {
       problem: [
         "Route planning was manual — figuring out stop order by hand doesn't account for time windows, vehicle capacity, or how long a driver's shift actually has left. That means wasted mileage, missed service windows, and routes that look fine on paper but fall apart by mid-afternoon.",
@@ -88,10 +97,9 @@ export const PROJECTS: Project[] = [
         { title: 'Estimated return times running short', description: 'The estimated_return calculation didn\'t account for time spent waiting at a stop, so predicted return times were consistently optimistic. Fixed by folding stop wait time into the back-calculation.' },
       ],
       results: [
-        "Live and deployed on Render with PostgreSQL. Still open: the repository is currently private, there's no pytest coverage on the optimizer heuristics yet, and there's no CI pipeline running against it.",
+        "Live and deployed on Render with PostgreSQL, with the repository now public. Still open: there's no pytest coverage on the optimizer heuristics yet, and there's no CI pipeline running against it.",
       ],
       whatsNext: [
-        'Make the repository public.',
         'Add pytest coverage specifically on the routing heuristics — nearest-neighbor construction and the 2-opt pass — not just the surrounding CRUD.',
         'Add a CI pipeline.',
         'Keep an eye on the Render free-tier Postgres 90-day expiry.',
@@ -105,6 +113,8 @@ export const PROJECTS: Project[] = [
     statusLabel: 'In Progress',
     statusTone: 'dispatch',
     stack: ['Flask', 'SQLAlchemy', 'Socket.IO'],
+    liveUrl: 'https://assistantscheduler.onrender.com',
+    repoUrl: 'https://github.com/SethSorrellDev/AssistantScheduler',
     caseStudy: {
       problem: [
         'Shift coverage and swaps were happening informally — texts, verbal handoffs — with no shared record of who actually agreed to cover what. That\'s how coverage gaps happen: two people each think the other has it handled.',
@@ -135,6 +145,12 @@ export const PROJECTS: Project[] = [
     statusLabel: 'Deployed',
     statusTone: 'route',
     stack: ['Spring Boot', 'React', 'TypeScript'],
+    liveUrl: 'https://routebook-frontend.onrender.com',
+    repoLinks: [
+      { label: 'Backend', url: 'https://github.com/SethSorrellDev/RouteBook' },
+      { label: 'Frontend', url: 'https://github.com/SethSorrellDev/routebook-frontend' },
+      { label: 'Identity Service', url: 'https://github.com/SethSorrellDev/identity-service' },
+    ],
     caseStudy: {
       problem: [
         "Route knowledge — which stops need special handling, gate codes, timing quirks, access notes — tends to live in individual drivers' heads or scattered paper notes. None of that survives a driver being out sick or a route getting reassigned.",
