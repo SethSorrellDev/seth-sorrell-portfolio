@@ -24,7 +24,7 @@ export class Hero {
     { label: 'RouteOptimizer', sublabel: 'VRPTW routing engine', x: 480, y: 200, kind: 'project' },
     { label: 'FleetCheck', sublabel: 'Inspection RBAC', x: 700, y: 150, kind: 'project' },
     { label: 'RouteBook', sublabel: 'Fleet records', x: 920, y: 190, kind: 'project' },
-    { label: 'Cintas Corporate', sublabel: 'Software Engineer Intern — Target', x: 1140, y: 80, kind: 'destination' },
+    { label: 'Career Goal', sublabel: 'Software Engineer Intern', x: 1140, y: 80, kind: 'destination' },
   ];
 
   get pathD(): string {
