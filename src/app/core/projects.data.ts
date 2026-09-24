@@ -40,7 +40,7 @@ export const PROJECTS: Project[] = [
     statusLabel: 'Deployed',
     statusTone: 'route',
     stack: ['Spring Boot', 'React', 'TypeScript', 'Docker', 'PostgreSQL'],
-    liveUrl: 'https://fleetcheck-j4y2.onrender.com',
+    liveUrl: 'https://fleetcheck-1.onrender.com',
     repoUrl: 'https://github.com/SethSorrellDev/fleetcheck',
     caseStudy: {
       problem: [
