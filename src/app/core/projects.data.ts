@@ -110,8 +110,8 @@ export const PROJECTS: Project[] = [
     slug: 'assistant-scheduler',
     name: 'AssistantScheduler',
     tagline: 'Workforce shift scheduling with RBAC, real-time notifications, and a full audit log.',
-    statusLabel: 'In Progress',
-    statusTone: 'dispatch',
+    statusLabel: 'Deployed',
+    statusTone: 'route',
     stack: ['Flask', 'SQLAlchemy', 'Socket.IO'],
     liveUrl: 'https://assistantscheduler.onrender.com',
     repoUrl: 'https://github.com/SethSorrellDev/AssistantScheduler',
@@ -130,10 +130,9 @@ export const PROJECTS: Project[] = [
         { title: 'Flask-SocketIO version drift', description: 'Real-time notifications worked locally and then broke in ways that were hard to reproduce. Pinning Flask-SocketIO to 5.6.1 with eventlet specifically resolved it — this was a dependency-compatibility problem, not a logic bug in the notification code itself.' },
       ],
       results: [
-        'Deployed on Render. This is currently the least-documented of the four apps — no formal test-coverage numbers recorded yet, which is reflected honestly in its "In Progress" status here rather than overstating where it actually stands.',
+        'Deployed on Render, with test coverage and documentation now brought up to the same standard as the rest of the suite.',
       ],
       whatsNext: [
-        'Round out test coverage and documentation to match the other three apps.',
         'Bring it into the shared identity-service once SSO client integration is further along.',
       ],
     },
