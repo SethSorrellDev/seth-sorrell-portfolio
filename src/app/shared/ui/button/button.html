@@ -1,7 +1,15 @@
-<a *ngIf="routerLink(); else hrefOrButton" [routerLink]="routerLink()" [fragment]="fragment()" [class]="classes()"><ng-content /></a>
+<ng-template #contentTpl><ng-content /></ng-template>
+
+<a *ngIf="routerLink(); else hrefOrButton" [routerLink]="routerLink()" [fragment]="fragment()" [class]="classes()">
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</a>
 <ng-template #hrefOrButton>
-  <a *ngIf="href(); else plainButton" [href]="href()" [attr.download]="download() ? '' : null" [attr.target]="download() ? null : '_blank'" [attr.rel]="download() ? null : 'noopener noreferrer'" [class]="classes()"><ng-content /></a>
+  <a *ngIf="href(); else plainButton" [href]="href()" [attr.download]="download() ? '' : null" [attr.target]="download() ? null : '_blank'" [attr.rel]="download() ? null : 'noopener noreferrer'" [class]="classes()">
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </a>
   <ng-template #plainButton>
-    <button [class]="classes()"><ng-content /></button>
+    <button [class]="classes()">
+      <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+    </button>
   </ng-template>
 </ng-template>

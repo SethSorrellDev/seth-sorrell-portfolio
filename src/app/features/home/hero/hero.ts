@@ -19,12 +19,12 @@ export class Hero {
   viewBox = '0 0 1200 400';
 
   nodes: RouteNode[] = [
-    { label: 'Frankfort Plant', sublabel: 'SSR — Current Role', x: 60, y: 320, kind: 'origin' },
+    { label: 'Frankfort Plant', sublabel: 'ASSR — Current Role', x: 60, y: 320, kind: 'origin' },
     { label: 'AssistantScheduler', sublabel: 'Workforce scheduling', x: 260, y: 260, kind: 'project' },
     { label: 'RouteOptimizer', sublabel: 'VRPTW routing engine', x: 480, y: 200, kind: 'project' },
     { label: 'FleetCheck', sublabel: 'Inspection RBAC', x: 700, y: 150, kind: 'project' },
     { label: 'RouteBook', sublabel: 'Fleet records', x: 920, y: 190, kind: 'project' },
-    { label: 'Cintas Corporate', sublabel: 'Software Engineer — Target', x: 1140, y: 80, kind: 'destination' },
+    { label: 'Cintas Corporate', sublabel: 'Software Engineer Intern — Target', x: 1140, y: 80, kind: 'destination' },
   ];
 
   get pathD(): string {
